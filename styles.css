@@ -1,7 +1,137 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+
+  /* fluid font sizes */
+  --fluid-font--1: clamp(0.5999rem, 0.9907rem + -0.4342vw, 0.8889rem);
+  --fluid-font-0: clamp(1rem, 1rem + 0vw, 1rem);
+  --fluid-font-1: clamp(1.125rem, 0.9342rem + 0.8143vw, 1.667rem);
+
+
+  /* custom fluid space value pairs */
+  --fluid-6-12: clamp(0.375rem, 0.243rem + 0.5634vw, 0.75rem);
+  --fluid-8-16: clamp(0.5rem, 0.3239rem + 0.7512vw, 1rem);
+  --fluid-10-20: clamp(0.625rem, 0.4049rem + 0.939vw, 1.25rem);
+  --fluid-15-25: clamp(0.9375rem, 0.7174rem + 0.939vw, 1.5625rem);
+  --fluid-15-30: clamp(0.9375rem, 0.6074rem + 1.4085vw, 1.875rem);
+
+}
+
+@font-face {
+  font-family: "Figtree";
+  src: url(assets/fonts/Figtree-VariableFont_wght.ttf) format("truetype-variations");
+  font-weight: 300 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Figtree";
+  src: url(assets/fonts/Figtree-Italic-VariableFont_wght.ttf) format("truetype-variations");
+  font-weight: 300 900;
+  font-style: italic;
+}
+
 body {
+  font-family: "Figtree", sans-serif;
   background-color: #f4d04e;
+  min-height: 100dvh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  gap: var(--fluid-15-30);
+  padding: 1rem;
+}
+
+p {
+  font-weight: 500;
+  font-size: var(--fluid-font-0);
+  line-height: 1.5;
+  color: #121212;
+}
+
+h2 {
+  font-weight: 800;
+  font-size: var(--fluid-font-1);
+  line-height: 1.2;
+  cursor: pointer;
+  color: #121212;
+  transition: color 0.3s;
+}
+
+h2 + p {
+  color: #6b6b6b;
+}
+
+.card {
+  background-color: #ffffff;
+  max-width: 360px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--fluid-10-20);
+  border: 1px solid #121212;
+  border-radius: 10px;
+  padding: var(--fluid-10-20);
+  box-shadow: 5px 5px #121212;
+}
+
+.card > img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--fluid-8-16);
+}
+
+.avatar {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: var(--fluid-8-16);
+  padding: 0.6rem 0;
+}
+
+.avatar img {
+  width: 40px;
+}
+
+.avatar p {
+  color: #121212;
+  font-weight: 800;
+}
+
+.highlight {
+  display: inline-block;
+  font-weight: 800;
+  border-radius: 4px;
+  padding: 5px 10px;
+  background-color: #f4d04e;
+}
+
+h2:hover {
+  color: #f4d04e;
+}
+
+footer p {
+  font-size: var(--fluid-font-0);
+  font-weight: 800;
+  text-align: center;
+}
+
+footer a {
+  color: #3e52a3;
+}
+
+@media (min-width: 26.57rem) {
+  br {
+    display: none;
+  }
 }
